@@ -62,6 +62,7 @@ public class Bullet_Enemy : MonoBehaviour
             collision.gameObject.GetComponent<Player_Health>().TakeDamage(Damage);
             collision.gameObject.GetComponent<Animator>().SetTrigger("Hurt");
             anim.SetTrigger("Hit");
+            Destroy(this.gameObject);
         }
     }
     public void Destroy()

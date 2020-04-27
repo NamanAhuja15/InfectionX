@@ -4,22 +4,16 @@ using UnityEngine;
 public class Shooting : MonoBehaviour
 {
     private Animator animator;
-    public float firerate,missilerate,bullets,missiles;
     private float time,lastfired;
     private bool shoot,fire;
-    public ParticleSystem muzzle;
-    public GameObject bullet, gunpoint,missile;
-    private ParticleSystem muzzle_;
-    public bool gun, rocket;
-    public static Shooting instance;
+
+    public ParticleSystem Muzzle;
+    public GameObject Bullet, Gunpoint,Missile;
+    public float Firerate, Missilerate, Bullets, Missiles;
+    public bool Gun, Rocket;
     void Start()
     {
         animator = GetComponent<Animator>();
-        muzzle_ = Instantiate(muzzle, gunpoint.transform);
-        instance = this;
-        gun = true;
-        bullets = 10;
-        missiles = 10;
     }
 
     // Update is called once per frame
@@ -28,31 +22,29 @@ public class Shooting : MonoBehaviour
         time += Time.deltaTime;
         if (SimpleInput.GetButton("Fire")) 
         {
-            if(Time.time-lastfired>1/firerate&&bullets>0)
+            if(Time.time-lastfired>1/Firerate&&Bullets>0)
             {
                 lastfired = Time.time;
                 shoot = true;
-                Instantiate(bullet,new Vector3(gunpoint.transform.position.x,gunpoint.transform.position.y,0),Quaternion.identity);
-                muzzle_.Play();
-                bullets--;
-                //muzzle_ = Instantiate(muzzle, gunpoint.transform);
-              
+                Instantiate(Bullet,new Vector3(Gunpoint.transform.position.x,Gunpoint.transform.position.y,0),Quaternion.identity);
+                Muzzle.Play();
+                Bullets--;
             }
         }
         if (SimpleInput.GetButton("Rocket"))
         {
-            if (time > missilerate && missiles > 0)
+            if (time > Missilerate && Missiles > 0)
             {
                 shoot = true;
-                Instantiate(missile, gunpoint.transform.position, Quaternion.identity);
+                Instantiate(Missile, Gunpoint.transform.position, Quaternion.identity);
                 time = 0f;
-                missiles--;
+                Missiles--;
             }
         }
         if (SimpleInput.GetButtonUp("Fire"))
         {
             shoot = false;
-            muzzle_.Stop();
+            Muzzle.Stop();
         }
         if(SimpleInput.GetButtonUp("Rocket"))
         {
@@ -64,6 +56,6 @@ public class Shooting : MonoBehaviour
     public void Reset()
     {
         shoot = false;
-        muzzle_.Stop();
+        Muzzle.Stop();
     }
 }

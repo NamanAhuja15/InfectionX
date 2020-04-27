@@ -39,8 +39,9 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1450981805003926}
   m_Enabled: 1
-  serializedVersion: 9
+  serializedVersion: 10
   m_Type: 2
+  m_Shape: 0
   m_Color: {r: 0.28676468, g: 1, b: 1, a: 1}
   m_Intensity: 25
   m_Range: 47.9
@@ -235,7 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd50ffe5a96f4424b80745d1d16b6d09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 200
+  speed: 250
   damage: 10
   player: {fileID: 0}
   Explode: {fileID: 19800004, guid: b46890100828db6429ff69c322b45893, type: 3}

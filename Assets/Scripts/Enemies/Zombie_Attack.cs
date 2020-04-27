@@ -31,10 +31,10 @@ public class Zombie_Attack : MonoBehaviour
                 }
                 if (zombie.transform.position.x - collider.gameObject.transform.position.x > 0)
                 {
-                    zombie.transform.localScale = zombie_script.left;
+                    zombie.transform.localScale = zombie_script.Left;
                 }
                 else
-                    zombie.transform.localScale = zombie_script.right;
+                    zombie.transform.localScale = zombie_script.Right;
             }
         }
     }
@@ -48,9 +48,9 @@ public class Zombie_Attack : MonoBehaviour
     }
     void Update()
     {
-        zombie_script.attack = attack;
-        zombie_script.detect = detect;
-        dead = zombie_script.dead;
+        zombie_script.Attack = attack;
+        zombie_script.Detect = detect;
+        dead = zombie_script.Dead;
         timer += Time.deltaTime;
         transform.position = zombie.transform.position;
     }

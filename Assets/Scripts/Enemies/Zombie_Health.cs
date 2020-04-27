@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Zombie_Health : MonoBehaviour
 {
-    public Sprite Health_bar;
+    public GameObject Health_bar;
     public float Health;
     private Animator animator;
 
@@ -25,8 +25,9 @@ public class Zombie_Health : MonoBehaviour
         if(Health<=0)
         {
             animator.SetTrigger("Dead");
-            gameObject.GetComponent<Zombie>().dead = true;
+            gameObject.GetComponent<Zombie>().Dead = true;
         }
+        Health_bar.transform.localScale= new Vector3(Health / 100,Health_bar.transform.localScale.y,1);
         
     }
     public void Die()

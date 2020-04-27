@@ -4,32 +4,36 @@ using UnityEngine;
 
 public class Zombie : MonoBehaviour
 {
-    public float movespeed,push,detection;
     private float x, y;
     private Vector2 velocity;
-    public Vector3 left, right;
+
     private bool leftmove, rightmove, idle;
     private Rigidbody2D rb;
     private Animator animator;
-    public bool dead,attack, run, detect;
-    public GameObject zombie;
+    public float Movespeed;
+    [HideInInspector]
+    public GameObject Zombie_;
+    [HideInInspector]
+    public Vector3 Left, Right;
+    [HideInInspector]
+    public bool Dead, Attack, Run, Detect;
     void Start()
     {
         x = transform.localScale.x;
         y = transform.localScale.y;
-        left = new Vector3(-x, y, 1);
-        right = new Vector3(x, y, 1);
+        Left = new Vector3(-x, y, 1);
+        Right = new Vector3(x, y, 1);
         rb = GetComponent<Rigidbody2D>();
         rightmove = true;
         animator = GetComponent<Animator>();
-        attack = false;
-        zombie=this.gameObject;
-        dead = false;
+        Attack = false;
+        Zombie_=this.gameObject;
+        Dead = false;
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!dead)
+        if (!Dead)
         {
             if (collision.gameObject.CompareTag("SpikesLeft"))
             {
@@ -58,32 +62,32 @@ public class Zombie : MonoBehaviour
     {
         if(gameObject.GetComponent<Zombie_Health>().Health<=0)
         {
-            dead = true;
+            Dead = true;
         }
-        if (!dead&&!detect)
+        if (!Dead&&!Detect)
         {
             if (rightmove)
             {
-                transform.localScale = right;
-                rb.velocity = new Vector2(movespeed, 0);
+                transform.localScale = Right;
+                rb.velocity = new Vector2(Movespeed, 0);
                 velocity = rb.velocity;
             }
             if (leftmove)
             {
-                transform.localScale = left;
-                rb.velocity = new Vector2(-movespeed, 0);
+                transform.localScale = Left;
+                rb.velocity = new Vector2(-Movespeed, 0);
                 velocity = rb.velocity;
             }
             if (leftmove || rightmove)
             {
-                run = true;
+                Run = true;
             }
         }
         else
         {
             rb.velocity = Vector2.zero;
         }
-        animator.SetBool("running", run);
-        animator.SetBool("attack", attack);
+        animator.SetBool("running", Run);
+        animator.SetBool("attack", Attack);
     }
 }

@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7449630175504625786}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.7, y: -10.1, z: -3.9}
+  m_LocalPosition: {x: 2.8, y: -16.5, z: -3.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7449630176056479944}
@@ -39,8 +39,9 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7449630175504625786}
   m_Enabled: 1
-  serializedVersion: 9
+  serializedVersion: 10
   m_Type: 2
+  m_Shape: 0
   m_Color: {r: 0, g: 0.19600534, b: 1, a: 1}
   m_Intensity: 33.5
   m_Range: 60.08
@@ -275,13 +276,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7703e6f8878a2cc4e94a18c98746d67c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundspeed: 300
-  airspeed: 200
-  initialjumpforce: 320
-  isGrounded: 0
   horizontalAxis: Horizontal
   verticalAxis: Vertical
   jumpButton: Jump
+  Groundspeed: 500
+  Airspeed: 300
+  Initialjumpforce: 200
+  IsGrounded: 0
 --- !u!114 &7449630176056479943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -294,16 +295,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22ed0a6d82bc99747bc4600614dc2bee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firerate: 2
-  missilerate: 5
-  bullets: 0
-  missiles: 0
-  muzzle: {fileID: 19800004, guid: 2f7910242354c78419d50ac9e64b496f, type: 3}
-  bullet: {fileID: 1567967645905842, guid: 940aa28f85b42c2478dc1f50a296b6b4, type: 3}
-  gunpoint: {fileID: 7449630176373427831}
-  missile: {fileID: 1606885508987902, guid: a435808e8d77bfd49bfd0721a08f715c, type: 3}
-  gun: 0
-  rocket: 0
+  Muzzle: {fileID: 7449630175936969541}
+  Bullet: {fileID: 1567967645905842, guid: 940aa28f85b42c2478dc1f50a296b6b4, type: 3}
+  Gunpoint: {fileID: 7449630176373427831}
+  Missile: {fileID: 1606885508987902, guid: a435808e8d77bfd49bfd0721a08f715c, type: 3}
+  Firerate: 3
+  Missilerate: 1
+  Bullets: 50
+  Missiles: 10
+  Gun: 0
+  Rocket: 0
 --- !u!114 &1933755929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -412,6 +413,12 @@ PrefabInstance:
 --- !u!4 &7449630175956368903 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400006, guid: 2f7910242354c78419d50ac9e64b496f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7449630175956755585}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &7449630175936969541 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 19800004, guid: 2f7910242354c78419d50ac9e64b496f,
     type: 3}
   m_PrefabInstance: {fileID: 7449630175956755585}
   m_PrefabAsset: {fileID: 0}

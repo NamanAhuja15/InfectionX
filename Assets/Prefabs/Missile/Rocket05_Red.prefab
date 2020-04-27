@@ -119,11 +119,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99f4746650e8e264ea5620a0ba520bd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {x: 0, y: 0}
-  speed: 150
-  damage: 90
-  rotateSpeed: 200
-  explode: {fileID: 876743156903632173, guid: cbe06c994e7e008439652ef2b6e4d817, type: 3}
+  Target: {x: 0, y: 0}
+  Speed: 200
+  Damage: 40
+  RotateSpeed: 200
+  Explode: {fileID: 876743156903632173, guid: cbe06c994e7e008439652ef2b6e4d817, type: 3}
 --- !u!61 &3768154231019566616
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -200,8 +200,9 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1596730087558813080}
   m_Enabled: 1
-  serializedVersion: 9
+  serializedVersion: 10
   m_Type: 2
+  m_Shape: 0
   m_Color: {r: 0.38679248, g: 0.08940016, b: 0.08940016, a: 1}
   m_Intensity: 4.35
   m_Range: 29.23
@@ -349,6 +350,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4112610730395018}
     m_Modifications:
+    - target: {fileID: 417480067566769574, guid: ffbc0307e3629a34c9039da23e776a55,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 417480067566769574, guid: ffbc0307e3629a34c9039da23e776a55,
+        type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 31.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 417480067566769574, guid: ffbc0307e3629a34c9039da23e776a55,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 11.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 417480067584774346, guid: ffbc0307e3629a34c9039da23e776a55,
+        type: 3}
+      propertyPath: m_Name
+      value: fire
+      objectReference: {fileID: 0}
     - target: {fileID: 417480067585044852, guid: ffbc0307e3629a34c9039da23e776a55,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -408,26 +429,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.11
-      objectReference: {fileID: 0}
-    - target: {fileID: 417480067584774346, guid: ffbc0307e3629a34c9039da23e776a55,
-        type: 3}
-      propertyPath: m_Name
-      value: fire
-      objectReference: {fileID: 0}
-    - target: {fileID: 417480067566769574, guid: ffbc0307e3629a34c9039da23e776a55,
-        type: 3}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 1.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 417480067566769574, guid: ffbc0307e3629a34c9039da23e776a55,
-        type: 3}
-      propertyPath: InitialModule.startSpeed.scalar
-      value: 31.47
-      objectReference: {fileID: 0}
-    - target: {fileID: 417480067566769574, guid: ffbc0307e3629a34c9039da23e776a55,
-        type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 11.41
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffbc0307e3629a34c9039da23e776a55, type: 3}

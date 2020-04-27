@@ -131,6 +131,10 @@ public class Movement : MonoBehaviour
             animator.SetTrigger("Hurt");
             this.gameObject.GetComponent<Player_Health>().TakeDamage(5);
         }
+        if(collision.gameObject.CompareTag("Platform"))
+        {
+            collision.gameObject.GetComponent<Rigidbody2D>().velocity = rigid.velocity;
+        }
     }
     public void OnCollisionExit2D(Collision2D collision)
     {

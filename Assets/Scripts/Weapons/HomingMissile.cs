@@ -3,31 +3,31 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class HomingMissile : MonoBehaviour {
-	public Vector2 target;
-	public float speed = 5f;
-	public float damage;
-	public float rotateSpeed = 200f;
+	public Vector2 Target;
+	public float Speed = 5f;
+	public float Damage;
+	public float RotateSpeed = 200f;
 	private GameObject[] list;
 	private Rigidbody2D rb;
 	private float time,destroy;
-	public ParticleSystem explode;
+	public ParticleSystem Explode;
 
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody2D>();
 		time = 0f;
-		target = Vector2.zero;	
+		Target = Vector2.zero;	
 	}
 	
 	void FixedUpdate () {
-		Vector2 direction = target - rb.position;
+		Vector2 direction = Target - rb.position;
 
 		direction.Normalize();
 
 		float rotateAmount = Vector3.Cross(direction, transform.up).z;
 
-		rb.angularVelocity = -rotateAmount * rotateSpeed;
-		rb.velocity = transform.up * speed;
+		rb.angularVelocity = -rotateAmount * RotateSpeed;
+		rb.velocity = transform.up * Speed;
 		
 	}
 	void Update()
@@ -37,11 +37,11 @@ public class HomingMissile : MonoBehaviour {
 		destroy += Time.deltaTime;
 		if (destroy > 5)
 			Destroy(this.gameObject);
-		if (target == Vector2.zero)
+		if (Target == Vector2.zero)
 		{
 			if (time > 5f)
 			{
-				target = new Vector2(1000, 1000);
+				Target = new Vector2(1000, 1000);
 			}
 		}
 		if (list != null)
@@ -50,7 +50,7 @@ public class HomingMissile : MonoBehaviour {
 			{
 				if (Vector2.Distance(transform.position, list[i].transform.position) <= 1000)
 				{
-					target = list[i].transform.position;
+					Target = list[i].transform.position;
 				}
 			}
 		}
@@ -59,8 +59,8 @@ public class HomingMissile : MonoBehaviour {
 	{
 		if (collide.CompareTag("Zombie"))
 		{
-			collide.gameObject.GetComponent<Zombie_Health>().TakeDmg(damage);
-			Instantiate(explode, collide.transform.position, Quaternion.identity);
+			collide.gameObject.GetComponent<Zombie_Health>().TakeDmg(Damage);
+			Instantiate(Explode, collide.transform.position, Quaternion.identity);
 			Destroy(this.gameObject);
 		}
 	}
