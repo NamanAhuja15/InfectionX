@@ -12,7 +12,8 @@ public class Movement : MonoBehaviour
     private Collider2D collide;
     private float inputHorizontal, landing;
     private float inputVertical, gravity;
-
+    private Player_Health health;
+    private Shooting ammo;
     public string horizontalAxis = "Horizontal";
     public string verticalAxis = "Vertical";
     public string jumpButton = "Jump";
@@ -26,6 +27,8 @@ public class Movement : MonoBehaviour
         left = new Vector3(-x, y, 1);
         right = new Vector3(x, y, 1);
         animator = GetComponent<Animator>();
+        ammo = GetComponent<Shooting>();
+        health = GetComponent<Player_Health>();
         rigid = GetComponent<Rigidbody2D>();
         collide = GetComponent<CircleCollider2D>();
         inputHorizontal = SimpleInput.GetAxis(horizontalAxis);
@@ -117,7 +120,7 @@ public class Movement : MonoBehaviour
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Platform"))
         {
             IsGrounded = true;
             doublejumped = false;
@@ -131,10 +134,6 @@ public class Movement : MonoBehaviour
             animator.SetTrigger("Hurt");
             this.gameObject.GetComponent<Player_Health>().TakeDamage(5);
         }
-        if(collision.gameObject.CompareTag("Platform"))
-        {
-            collision.gameObject.GetComponent<Rigidbody2D>().velocity = rigid.velocity;
-        }
     }
     public void OnCollisionExit2D(Collision2D collision)
     {
@@ -143,6 +142,40 @@ public class Movement : MonoBehaviour
             IsGrounded = false;
             running = false;
             movespeed = Airspeed;
+        }
+        if(collision.gameObject.CompareTag("Platform"))
+        {
+            transform.parent = null;
+            rigid.velocity = Vector2.zero;
+        }
+    }
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.CompareTag("R_Ammo"))
+        {
+            ammo.Missiles += 3;
+            Destroy(other.gameObject);
+        }
+        if(other.gameObject.CompareTag("B_Ammo"))
+        {
+            ammo.Bullets += 15;
+            Destroy(other.gameObject);
+        }
+        if(other.gameObject.CompareTag("Respawn"))
+            {
+            health.health += 25f;
+            Destroy(other.gameObject);
+        }
+        if(other.gameObject.CompareTag("Finish"))
+        {
+            health.health = 0f;
+        }
+    }
+    public void OnCollisionStay2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Platform"))
+        {
+            transform.parent = other.transform;
         }
     }
     public void Fall()

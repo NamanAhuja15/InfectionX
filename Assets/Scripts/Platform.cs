@@ -7,9 +7,10 @@ public class Platform : MonoBehaviour
     // Start is called before the first frame update
     private bool move;
     public float speed;
+    private Rigidbody2D rb;
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {
@@ -26,6 +27,6 @@ public class Platform : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(transform.right * speed * Time.deltaTime);
+        rb.velocity = new Vector2(speed, 0f);
     }
 }

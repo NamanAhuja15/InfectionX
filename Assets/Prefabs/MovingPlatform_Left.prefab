@@ -104,10 +104,10 @@ GameObject:
   - component: {fileID: 541826128756749046}
   - component: {fileID: 541826128756749047}
   - component: {fileID: 541826128756748936}
-  - component: {fileID: 541826128756748939}
+  - component: {fileID: -9215254316839041338}
   m_Layer: 0
   m_Name: MovingPlatform_Left
-  m_TagString: Ground
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,7 +121,7 @@ Transform:
   m_GameObject: {fileID: 541826128756749044}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -74.26538, y: -71.4124, z: 25472}
-  m_LocalScale: {x: 1.6, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 541826128393862810}
   m_Father: {fileID: 0}
@@ -190,18 +190,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.000030517578, y: -2.0897522}
+  m_Offset: {x: -1.3399658, y: 0.5892639}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 62.211426, y: 62.211426}
+    oldSize: {x: 128, y: 128}
     newSize: {x: 256, y: 77.28772}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 59.21753, y: 60.258446}
+  m_Size: {x: 126.21411, y: 140.65262}
   m_EdgeRadius: 0
 --- !u!114 &541826128756748936
 MonoBehaviour:
@@ -215,8 +215,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f259696136a38e646be34ac771c5f8bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 150
---- !u!50 &541826128756748939
+  speed: 100
+--- !u!50 &-9215254316839041338
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -224,16 +224,16 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 541826128756749044}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 0.0001
   m_LinearDrag: 0
-  m_AngularDrag: 0
+  m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_CollisionDetection: 1
+  m_Constraints: 4

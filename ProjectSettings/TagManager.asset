@@ -11,6 +11,8 @@ TagManager:
   - Bullet
   - Missile
   - Platform
+  - R_Ammo
+  - B_Ammo
   layers:
   - Default
   - TransparentFX

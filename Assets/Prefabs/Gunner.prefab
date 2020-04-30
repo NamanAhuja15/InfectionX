@@ -458,6 +458,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health_bar: {fileID: 280018243}
   Health: 0
+  DropObjects:
+  - {fileID: 222562774596348759, guid: e2e218e15fdadc544b278778e09f129c, type: 3}
+  - {fileID: 2738090382728904501, guid: a69fe9d0cefd6d94fbc3ebf9c3b24123, type: 3}
+  - {fileID: 2620452547019996314, guid: d7ad5b7ec134bc84b8d664cf29f5b9de, type: 3}
 --- !u!1 &5025611944865176514
 GameObject:
   m_ObjectHideFlags: 0

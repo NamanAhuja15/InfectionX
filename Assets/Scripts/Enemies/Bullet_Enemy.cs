@@ -40,7 +40,7 @@ public class Bullet_Enemy : MonoBehaviour
             else
                 light1.enabled = false;
         }
-        if (destroy > 2.5f)
+        if (destroy > 3f)
             Destroy(this.gameObject);
     }
     void FixedUpdate()
