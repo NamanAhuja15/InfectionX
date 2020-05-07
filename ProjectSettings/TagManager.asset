@@ -13,6 +13,7 @@ TagManager:
   - Platform
   - R_Ammo
   - B_Ammo
+  - EndGame
   layers:
   - Default
   - TransparentFX

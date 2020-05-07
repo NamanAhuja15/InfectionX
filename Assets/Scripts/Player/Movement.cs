@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 public class Movement : MonoBehaviour
 {
     private Rigidbody2D rigid;
@@ -14,6 +14,8 @@ public class Movement : MonoBehaviour
     private float inputVertical, gravity;
     private Player_Health health;
     private Shooting ammo;
+    private AudioManager manager;
+
     public string horizontalAxis = "Horizontal";
     public string verticalAxis = "Vertical";
     public string jumpButton = "Jump";
@@ -28,6 +30,7 @@ public class Movement : MonoBehaviour
         right = new Vector3(x, y, 1);
         animator = GetComponent<Animator>();
         ammo = GetComponent<Shooting>();
+        manager = GetComponent<AudioManager>();
         health = GetComponent<Player_Health>();
         rigid = GetComponent<Rigidbody2D>();
         collide = GetComponent<CircleCollider2D>();
@@ -98,19 +101,14 @@ public class Movement : MonoBehaviour
             {
                 landing = 0f;
                 playerJumped = true;
-               
                 rigid.AddForce(transform.up * Initialjumpforce,ForceMode2D.Impulse);
                 candoublejump = true;
+                manager.Jump();
             }
-           /* else if(!isGrounded)
-            {
-                if (candoublejump)
-                {
-                    DoubleJump();
-                }
-            }*/
         }
-        }
+        if (running)
+            manager.Walk();
+    }
     private void DoubleJump()
     {
         doublejumped = true;
@@ -169,6 +167,10 @@ public class Movement : MonoBehaviour
         if(other.gameObject.CompareTag("Finish"))
         {
             health.health = 0f;
+        }
+        if(other.gameObject.CompareTag("EndGame"))
+        {
+            SceneManager.LoadScene("GameOver");
         }
     }
     public void OnCollisionStay2D(Collision2D other)

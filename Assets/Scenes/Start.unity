@@ -1011,7 +1011,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 24, y: -6}
+  m_AnchoredPosition: {x: 4.3, y: 18.7}
   m_SizeDelta: {x: 253, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1887910321
@@ -1041,8 +1041,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294904576
-  m_fontColor: {r: 0, g: 0.04256487, b: 1, a: 1}
+    rgba: 4280092936
+  m_fontColor: {r: 0.031505868, g: 0.03631185, b: 0.11320752, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1287,8 +1287,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1, y: -14}
-  m_SizeDelta: {x: 253, y: 50}
+  m_AnchoredPosition: {x: 1, y: 17.6}
+  m_SizeDelta: {x: 253, y: 39.15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2027530115
 MonoBehaviour:
@@ -1317,8 +1317,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294905600
-  m_fontColor: {r: 0, g: 0.059598923, b: 1, a: 1}
+    rgba: 4280092936
+  m_fontColor: {r: 0.031505868, g: 0.03631185, b: 0.11320752, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1353,7 +1353,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 0
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -1442,7 +1442,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 69, y: -8.7}
+  m_AnchoredPosition: {x: 73, y: 20.9}
   m_SizeDelta: {x: 253, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2081919591
@@ -1472,8 +1472,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294912512
-  m_fontColor: {r: 0, g: 0.1660657, b: 1, a: 1}
+    rgba: 4280092936
+  m_fontColor: {r: 0.031505868, g: 0.03631185, b: 0.11320752, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
